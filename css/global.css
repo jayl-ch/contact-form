@@ -1,0 +1,165 @@
+:root {
+  --primary-Green-200: hsl(148, 38%, 91%);
+  --primary-Green-600: hsl(169, 82%, 27%);
+  --primary-Red: hsl(0, 66%, 54%);
+
+  --neutral-White: hsl(0, 0%, 100%);
+  --neutral-Grey-500: hsl(186, 15%, 59%);
+  --neutral-Grey-900: hsl(187, 24%, 22%);
+}
+
+@font-face {
+  font-family: "Karla";
+  src: url("../assets/fonts/Karla-VariableFont_wght.ttf");
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Karla", sans-serif;
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  background-color: var(--primary-Green-200);
+  margin: 1rem 0;
+  overflow-x: hidden;
+}
+
+main {
+  width: min(90%, 50rem);
+}
+
+.container {
+  background-color: var(--neutral-White);
+  padding: clamp(1rem, 1.5vw, 2rem);
+  border-radius: 10px;
+  width: 100%;
+}
+
+.container .title h1 {
+  margin-block-start: 0;
+}
+
+.container form {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.container form .name > div,
+.container form > div:not(:first-of-type) {
+  display: grid;
+  gap: 1rem;
+  width: 100%;
+}
+
+.container form .name,
+.container form .query-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.container form .query-wrapper {
+  user-select: none;
+}
+
+.container form input,
+.container form .query-type .query-wrapper label,
+.container form .text-area-wrapper textarea,
+.container form .submit {
+  padding: 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+}
+
+.container form .query-type .query-wrapper label,
+.container .consent-wrapper label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.container form input:focus-visible,
+.container form .query-type .query-wrapper label:focus-visible,
+.container form .text-area-wrapper textarea:focus-visible {
+  outline: 2px solid var(--primary-Green-600);
+}
+
+.container form .query-wrapper label:has(input:checked) {
+  outline: 2px solid var(--primary-Green-600);
+  background-color: var(--primary-Green-200);
+}
+
+.container form .text-area-wrapper textarea[name="text-area"] {
+  height: 10rem;
+  resize: none;
+}
+
+.container form .consent-wrapper {
+  user-select: none;
+  font-size: 1rem;
+}
+
+.container form .consent-wrapper label input {
+  aspect-ratio: 1;
+  width: 1rem;
+}
+
+.container form button[type="submit"] {
+  background-color: var(--primary-Green-600);
+  color: var(--neutral-White);
+  cursor: pointer;
+}
+
+.container form button[type="submit"]:active {
+  background-color: var(--neutral-Grey-900);
+}
+
+span.error {
+  color: orangered;
+}
+
+.toast {
+  position: fixed;
+  top: -200px;
+  background-color: var(--neutral-Grey-900);
+  padding: 1rem;
+  border-radius: 10px;
+  color: var(--neutral-White);
+}
+
+.toast .check-icon {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+@media all and (width > 1000px) {
+  .container form .name,
+  .container form .query-type .query-wrapper {
+    flex-direction: row;
+  }
+
+  .container form .query-type .query-wrapper label {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .container form input,
+  .container form .query-type .query-wrapper label,
+  .container form .text-area-wrapper textarea,
+  .container form .query-wrapper label {
+    transition:
+      outline 0.2s ease,
+      background 0.2s ease;
+  }
+
+  .toast {
+    transition: top 0.2s ease;
+  }
+}

@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="css/global.css" />
+    <title>Frontend Mentor | Contact form</title>
+  </head>
+  <body>
+    <main>
+      <article class="container">
+        <div class="title">
+          <h1>Contact Us</h1>
+        </div>
+        <form>
+          <div class="name">
+            <div class="first-name">
+              <label for="f-name">First Name *</label>
+              <input id="f-name" type="text" />
+              <span class="error" hidden>This field is required</span>
+            </div>
+            <div class="last-name">
+              <label for="l-name">Last Name *</label>
+              <input id="l-name" type="text" />
+              <span class="error" hidden>This field is required</span>
+            </div>
+          </div>
+          <div class="email-address">
+            <label for="email">Email Address *</label>
+            <input id="email" type="email" />
+            <span class="error" hidden></span>
+          </div>
+          <div class="query-type">
+            <label for="query">Query Type *</label>
+            <div id="query" class="query-wrapper">
+              <label>
+                <input type="radio" name="query" />General Enquiry
+              </label>
+              <label>
+                <input type="radio" name="query" />Support Request
+              </label>
+            </div>
+            <span class="error" hidden></span>
+          </div>
+          <div class="text-area-wrapper">
+            <label for="text-area">Message *</label>
+            <textarea name="text-area" id="text-area"></textarea>
+            <span class="error" hidden></span>
+          </div>
+          <div class="consent-wrapper">
+            <label
+              ><input type="checkbox" />I consent to being contacted by the
+              team</label
+            >
+            <span class="error" hidden></span>
+          </div>
+          <button type="submit" class="submit">Submit</button>
+        </form>
+      </article>
+    </main>
+    <div class="toast" role="status" aria-live="polite" hidden>
+      <div class="check-icon">
+        <img src="assets/images/icon-success-check.svg" alt="" />
+        <span></span>
+      </div>
+      <p></p>
+    </div>
+    <!-- <div class="attribution"> -->
+    <!--   Challenge by -->
+    <!--   <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. -->
+    <!--   Coded by <a href="#">Your Name Here</a>. -->
+    <!-- </div> -->
+    <script type="module" src="script/main.js"></script>
+  </body>
+</html>
