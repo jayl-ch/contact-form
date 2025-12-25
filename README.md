@@ -32,7 +32,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [https://jayl-ch.github.io/contact-form](https://jayl-ch.github.io/contact-form)
+- Live Site URL: [https://jayl-ch.github.io/contact-form/](https://jayl-ch.github.io/contact-form/)
 
 ## My process
 
