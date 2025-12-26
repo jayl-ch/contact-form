@@ -36,7 +36,7 @@
           <div class="email-address">
             <label for="email">Email Address *</label>
             <input id="email" type="email" />
-            <span class="error" hidden></span>
+            <span class="error" hidden>Please enter a valid email address</span>
           </div>
           <div class="query-type">
             <label for="query">Query Type *</label>
@@ -48,19 +48,21 @@
                 <input type="radio" name="query" />Support Request
               </label>
             </div>
-            <span class="error" hidden></span>
+            <span class="error" hidden>Please select a query type</span>
           </div>
           <div class="text-area-wrapper">
             <label for="text-area">Message *</label>
             <textarea name="text-area" id="text-area"></textarea>
-            <span class="error" hidden></span>
+            <span class="error" hidden>This field is required</span>
           </div>
           <div class="consent-wrapper">
             <label
               ><input type="checkbox" />I consent to being contacted by the
               team</label
             >
-            <span class="error" hidden></span>
+            <span class="error" hidden
+              >To submit this form, please consent to being contacted</span
+            >
           </div>
           <button type="submit" class="submit">Submit</button>
         </form>
