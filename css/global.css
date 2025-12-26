@@ -35,7 +35,7 @@ main {
 
 .container {
   background-color: var(--neutral-White);
-  padding: clamp(1rem, 1.5vw, 2rem);
+  padding: clamp(1rem, 2vw, 3rem);
   border-radius: 10px;
   width: 100%;
 }
@@ -47,6 +47,7 @@ main {
 .container form {
   display: grid;
   gap: 1.5rem;
+  color: var(--neutral-Grey-900);
 }
 
 .name > div,
@@ -95,7 +96,7 @@ main {
   white-space: nowrap;
 }
 
-.query-type .query-wrapper label,
+.query-wrapper label,
 .consent-wrapper label {
   display: flex;
   align-items: center;
@@ -103,7 +104,7 @@ main {
 }
 
 input:focus-visible,
-.query-type .query-wrapper label:focus-visible,
+.query-wrapper label:focus-visible,
 .text-area-wrapper textarea:focus-visible {
   outline: 1px solid var(--primary-Green-600);
 }
@@ -136,6 +137,8 @@ button[type="submit"] {
   background-color: var(--primary-Green-600);
   color: var(--neutral-White);
   cursor: pointer;
+  font-size: 1rem;
+  border: none;
 }
 
 button[type="submit"]:active {
@@ -193,5 +196,14 @@ span.asterisk {
 
   .toast {
     transition: top 0.3s ease;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .container form input,
+  .query-type .query-wrapper label,
+  .text-area-wrapper textarea,
+  .toast {
+    transition: none;
   }
 }
