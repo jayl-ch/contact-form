@@ -142,7 +142,8 @@ button[type="submit"]:active {
   background-color: var(--neutral-Grey-900);
 }
 
-input[type="radio"] {
+input[type="radio"],
+input[type="checkbox"] {
   accent-color: var(--primary-Green-600);
 }
 
