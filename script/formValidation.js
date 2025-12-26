@@ -71,7 +71,7 @@ function validateEmail(email) {
 
   const regex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
 
-  if (!emailInput.value.trim() || regex.test(emailInput)) {
+  if (!emailInput.value.trim() || !regex.test(emailInput.value.trim())) {
     setInvalid(emailInput, emailSpan);
     return false;
   } else {
