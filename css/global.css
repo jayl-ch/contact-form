@@ -119,17 +119,22 @@ main {
   background-color: var(--neutral-Grey-900);
 }
 
+input[type="radio"] {
+  accent-color: var(--primary-Green-600);
+}
+
 span.error {
   color: orangered;
 }
 
 .toast {
   position: fixed;
-  top: -200px;
+  top: -100%;
   background-color: var(--neutral-Grey-900);
   padding: 1rem;
   border-radius: 10px;
   color: var(--neutral-White);
+  font-size: clamp(0.825rem, 2vw, 1rem);
 }
 
 .toast .check-icon {
@@ -138,7 +143,7 @@ span.error {
   gap: 0.5rem;
 }
 
-@media all and (width > 1000px) {
+@media all and (width > 62.5rem) {
   .container form .name,
   .container form .query-type .query-wrapper {
     flex-direction: row;
