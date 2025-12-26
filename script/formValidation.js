@@ -66,8 +66,8 @@ function validateLastName(lastName, span) {
 }
 
 function validateEmail(email) {
-  const emailInput = email.querySelector("input");
-  const emailSpan = email.querySelector("span");
+  const emailInput = email.querySelector(":scope > input");
+  const emailSpan = email.querySelector(":scope > span");
 
   const regex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
 
@@ -97,7 +97,7 @@ function validateQuery(query) {
 
 function validateMessage(message) {
   const textArea = message.querySelector("textarea");
-  const span = message.querySelector("span");
+  const span = message.querySelector(":scope > span");
 
   if (!textArea.value.trim()) {
     setInvalid(textArea, span);
