@@ -13,7 +13,7 @@ export function showToast(toast) {
   setToastMessage(toast);
 
   setTimeout(() => {
-    toast.style.top = "-100%";
+    toast.style.top = "-50%";
     toast.addEventListener(
       "transitionend",
       () => {
