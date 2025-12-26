@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- displays site properly based on user's device -->
-
     <link
       rel="icon"
       type="image/png"
@@ -23,44 +22,71 @@
         <form>
           <div class="name">
             <div class="first-name">
-              <label for="f-name">First Name *</label>
-              <input id="f-name" type="text" />
-              <span class="error" hidden>This field is required</span>
+              <label for="f-name"
+                >First Name
+                <span aria-hidden="true" class="asterisk">*</span></label
+              >
+              <input id="f-name" type="text" aria-describedby="f-name-span" />
+              <span id="f-name-span" class="error" hidden
+                >This field is required</span
+              >
             </div>
             <div class="last-name">
-              <label for="l-name">Last Name *</label>
-              <input id="l-name" type="text" />
-              <span class="error" hidden>This field is required</span>
+              <label for="l-name"
+                >Last Name
+                <span aria-hidden="true" class="asterisk">*</span></label
+              >
+              <input id="l-name" type="text" aria-describedby="l-name-span" />
+              <span id="l-name-span" class="error" hidden
+                >This field is required</span
+              >
             </div>
           </div>
           <div class="email-address">
-            <label for="email">Email Address *</label>
-            <input id="email" type="email" />
-            <span class="error" hidden>Please enter a valid email address</span>
+            <label for="email"
+              >Email Address
+              <span aria-hidden="true" class="asterisk">*</span></label
+            >
+            <input id="email" type="email" aria-describedby="email-span" />
+            <span id="email-span" class="error" hidden
+              >Please enter a valid email address</span
+            >
           </div>
           <div class="query-type">
-            <label for="query">Query Type *</label>
-            <div id="query" class="query-wrapper">
+            <label id="query-type" for="query"
+              >Query Type
+              <span aria-hidden="true" class="asterisk">*</span></label
+            >
+            <fieldset id="query" class="query-wrapper">
+              <legend>Query type</legend>
               <label>
                 <input type="radio" name="query" />General Enquiry
               </label>
               <label>
                 <input type="radio" name="query" />Support Request
               </label>
-            </div>
+            </fieldset>
             <span class="error" hidden>Please select a query type</span>
           </div>
           <div class="text-area-wrapper">
-            <label for="text-area">Message *</label>
-            <textarea name="text-area" id="text-area"></textarea>
-            <span class="error" hidden>This field is required</span>
+            <label for="text-area"
+              >Message <span aria-hidden="true" class="asterisk">*</span></label
+            >
+            <textarea
+              name="text-area"
+              id="text-area"
+              aria-describedby="message-span"
+            ></textarea>
+            <span id="message-span" class="error" hidden
+              >This field is required</span
+            >
           </div>
           <div class="consent-wrapper">
             <label
-              ><input type="checkbox" />I consent to being contacted by the
-              team</label
+              ><input aria-describedby="consent-span" type="checkbox" />I
+              consent to being contacted by the team</label
             >
-            <span class="error" hidden
+            <span id="consent-span" class="error" hidden
               >To submit this form, please consent to being contacted</span
             >
           </div>

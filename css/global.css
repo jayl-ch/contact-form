@@ -49,7 +49,7 @@ main {
   gap: 1.5rem;
 }
 
-.container form .name > div,
+.name > div,
 .container form > div:not(:first-of-type) {
   display: grid;
   gap: 1rem;
@@ -57,65 +57,88 @@ main {
 }
 
 .container form .name,
-.container form .query-wrapper {
+.query-wrapper {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
-.container form .query-wrapper {
+.query-wrapper {
   user-select: none;
 }
 
 .container form input,
-.container form .query-type .query-wrapper label,
-.container form .text-area-wrapper textarea,
-.container form .submit {
+.query-type .query-wrapper label,
+.text-area-wrapper textarea,
+.submit {
   padding: 1rem;
   border: 1px solid rgba(0, 0, 0, 0.5);
   border-radius: 10px;
 }
 
-.container form .query-type .query-wrapper label,
-.container .consent-wrapper label {
+.query-wrapper {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  min-inline-size: 0;
+}
+
+.query-wrapper legend {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  border: none;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+.query-type .query-wrapper label,
+.consent-wrapper label {
   display: flex;
   align-items: center;
   gap: 0.5rem;
 }
 
-.container form input:focus-visible,
-.container form .query-type .query-wrapper label:focus-visible,
-.container form .text-area-wrapper textarea:focus-visible {
-  outline: 2px solid var(--primary-Green-600);
+input:focus-visible,
+.query-type .query-wrapper label:focus-visible,
+.text-area-wrapper textarea:focus-visible {
+  outline: 1px solid var(--primary-Green-600);
 }
 
-.container form .query-wrapper label:has(input:checked) {
-  outline: 2px solid var(--primary-Green-600);
+.query-wrapper label:has(input:checked) {
+  outline: 1px solid var(--primary-Green-600);
   background-color: var(--primary-Green-200);
 }
 
-.container form .text-area-wrapper textarea[name="text-area"] {
+.text-area-wrapper textarea[name="text-area"] {
   height: 10rem;
   resize: none;
 }
 
-.container form .consent-wrapper {
+.consent-wrapper {
   user-select: none;
   font-size: 1rem;
 }
 
-.container form .consent-wrapper label input {
+.consent-wrapper label {
+  cursor: pointer;
+}
+
+.consent-wrapper label input {
   aspect-ratio: 1;
   width: 1rem;
 }
 
-.container form button[type="submit"] {
+button[type="submit"] {
   background-color: var(--primary-Green-600);
   color: var(--neutral-White);
   cursor: pointer;
 }
 
-.container form button[type="submit"]:active {
+button[type="submit"]:active {
   background-color: var(--neutral-Grey-900);
 }
 
@@ -127,9 +150,13 @@ span.error {
   color: orangered;
 }
 
+span.asterisk {
+  color: var(--primary-Green-600);
+}
+
 .toast {
   position: fixed;
-  top: -100%;
+  top: -50%;
   background-color: var(--neutral-Grey-900);
   padding: 1rem;
   border-radius: 10px;
@@ -145,26 +172,25 @@ span.error {
 
 @media all and (width > 62.5rem) {
   .container form .name,
-  .container form .query-type .query-wrapper {
+  .query-type .query-wrapper {
     flex-direction: row;
   }
 
-  .container form .query-type .query-wrapper label {
+  .query-type .query-wrapper label {
     width: 100%;
   }
 }
 
 @media (prefers-reduced-motion: no-preference) {
   .container form input,
-  .container form .query-type .query-wrapper label,
-  .container form .text-area-wrapper textarea,
-  .container form .query-wrapper label {
+  .query-type .query-wrapper label,
+  .text-area-wrapper textarea {
     transition:
       outline 0.2s ease,
       background 0.2s ease;
   }
 
   .toast {
-    transition: top 0.2s ease;
+    transition: top 0.3s ease;
   }
 }
